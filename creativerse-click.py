@@ -7,6 +7,5 @@ for i in range(3):
     print '\a'
     time.sleep(1)
 
-# Get and print the mouse coordinates.
 x, y = pyautogui.position()
-pyautogui.click(x, y)
+mouseDown(x, y, 'left')
