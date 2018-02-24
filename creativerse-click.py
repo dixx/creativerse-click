@@ -1,11 +1,16 @@
 #! python3
-import pyautogui, time
+import keyboard
+import pyautogui
 
 print('Press Ctrl-C to quit.')
-time.sleep(27)
-for i in range(3):
-    print('\a')
-    time.sleep(1)
 
-x, y = pyautogui.position()
-pyautogui.mouseDown(x, y, 'left')
+isDown = False
+
+while True:
+    keyboard.wait('P')
+    x, y = pyautogui.position()
+    if isDown:
+        pyautogui.mouseUp(x, y, 'left')
+    else:
+        pyautogui.mouseDown(x, y, 'left')
+    isDown = True
