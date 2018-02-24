@@ -2,15 +2,24 @@
 import keyboard
 import pyautogui
 
-print('Press Ctrl-C to quit.')
 
-isDown = False
-
-while True:
-    keyboard.wait('P')
+def toggleMouse(state):
     x, y = pyautogui.position()
-    if isDown:
+    if state:
         pyautogui.mouseUp(x, y, 'left')
     else:
         pyautogui.mouseDown(x, y, 'left')
-    isDown = True
+
+
+print('Press SHIFT+P to toggle mouse up/down, SHIFT+ESC to quit.')
+
+isDown = False
+running = True
+
+while running:
+    key = keyboard.read_hotkey()
+    if key == 'shift+esc':
+        running = False
+    if key == 'shift+p':
+        toggleMouse(isDown)
+        isDown = not isDown
