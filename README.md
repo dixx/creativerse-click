@@ -7,8 +7,7 @@ If a large amount of water, lava, tar or any other liquid is needed, you are sta
   <code>pip install keyboard</code>
 
 - The module __pyautogui__<br>
-  <code>pip install pyautogui
-
+  <code>pip install pyautogui</code>
 
 # How to Use
 
